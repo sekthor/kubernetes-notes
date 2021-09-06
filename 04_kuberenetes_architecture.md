@@ -66,3 +66,44 @@ One of the `etcd` instances is the master, receiving all changes.
 The others are followers.
 They synchronize using the `Raft Consensus Algorithm`.
 
+## Worker Nodes
+
+Pods are scheduled on worker nodes (by Master Node).
+A Pod is the smallest unit in K8.
+It is a logical collection of one or more containers scheduled together.
+
+A worker node contains of:
+
+- Container runtime
+- Node Agent (kubelet)
+- Proxy (kube-proxy)
+- Addons for: DNS, Dashboard UI, Monitoring, Logging
+
+### Container Runtime
+
+K8 can not run containers itself.
+A container runtime is used, to manage a containers lifcycle.
+This runtime needs to be installed on the worker node, the Pod is to be scheduled.
+
+Supported runtimes include
+
+- (Docker)
+- CRI-O
+- containerd
+- frakti
+
+### Node Agent (kublet)
+
+The Node Agent (`kubelet`) runs on every worker node and comunicates with the control plane.
+The kublet interacts with the container runtime and monitors health and resources.
+A *CRI shim* (container runtime interface) application, acts as a middleware between kublet and container runtime and abstracts the runtime to a common interface, the kublet can access.
+The API Server sends Pod definitions to the kublet.
+
+### kube-proxy
+
+Updates and maintains networking rules.
+It forwards connection requests to Pods.
+
+### Addons
+
+Addons are features that are not supported by Kubernetes itself and thus implemented as third-party addon.
