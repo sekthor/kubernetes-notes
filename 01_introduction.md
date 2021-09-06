@@ -14,3 +14,10 @@ Containters are meant to be lightweight and disposable.
 
 Microservices are loosely coupled.
 They split monolithic applications into small singular pieces.
+Each service offers a independent piece of functionality of the application.
+The Microservices comunicate with each other over a network.
+Microservices are scalebale individually.
+
+Microservices can be updated seamlessly, next to no downtime.
+They allow for much faster development.
+Microservices can be implemented with variing technologies.
