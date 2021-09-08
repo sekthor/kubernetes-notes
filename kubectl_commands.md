@@ -1,6 +1,6 @@
 # `kubectl` commands
 
-## Common accronyms
+## Common acronyms
 
 ```
 no:  node
