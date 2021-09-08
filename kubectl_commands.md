@@ -3,8 +3,13 @@
 ## Common accronyms
 
 ```
+no:  node
+po:  pod
 svc: service
 ns:  namespace
+cm:  configmap
+pv:  persistentvolume
+pvc: persistentvolumeclaim
 ctx: context
 ```
 
